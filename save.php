@@ -21,20 +21,19 @@
 
 <?php
 
-//    require "connection.php";
+    require "connection.php";
 
-    if($conn=mysqli_connect("localhost","root","root","banking_system",3308)){
-        echo "Success!";
-    }
-    else{
-        die("error in connection");
-    }
 
     $sender=$_POST['sender'];
     $recipient=$_POST['Recipient'];
     $amount=$_POST['amount'];
     $date=date('d-m-Y h:i:s A');        //returns current date from the server in (dd-mm-yyyy hh:mn:ss AM/PM) formate
     $acc_bal=$_POST['acc_bal'];
+
+
+
+    /*   **************** Updating Database for Data entry ****************    */
+
 
     function insert($conn,$sender,$recipient,$date,$amount,$acc_bal)
     {
@@ -44,14 +43,13 @@
         }
         else
         {
-
             $query="INSERT INTO transactions(from_acc,to_acc,date,amount) VALUES($sender,$recipient,'$date',$amount);";
             if(mysqli_query($conn,$query))
             {
-
                 $acc_bal=$acc_bal-$amount;
-                $query="UPDATE customers SET acc_bal=$acc_bal WHERE acc_no=$sender;";
-                if(mysqli_query($conn,$query) or die("error in 2"))
+                $query1="UPDATE customers SET acc_bal=$acc_bal WHERE acc_no=$sender;";
+                $query2="UPDATE customers SET acc_bal=acc_bal+$amount WHERE acc_no=$recipient;";
+                if(mysqli_query($conn,$query1) and mysqli_query($conn,$query2))
                 {
                     return 1;
                 }
@@ -100,7 +98,7 @@
                     $tr_id=$row['tr_id'];
             ?>
                 <div>
-                    <p><h3>Your Transaction ID is <strong>'<?php echo $tr_id ?>'</strong>.</h3></p>
+                    <p><h3>Your Transaction ID is <strong>'<?php echo $tr_id; ?>'</strong>.</h3></p>
                     <p>Keep this Transaction ID for further reference.</p>
                 </div>
             <?php
@@ -109,7 +107,7 @@
                 {    
             ?>
                 <div class="fail_msg">
-                    <span class="fa fa-remove"> Money Transfer Unuccessful.</span>
+                    <span class="fa fa-remove"> Money Transfer Unsuccessful.</span>
             </div>
             <?php
                 }
@@ -127,6 +125,4 @@
 
 </body>
 </html>
-
-
 
