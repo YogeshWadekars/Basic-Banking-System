@@ -6,7 +6,7 @@ I have made the basic banking website named as <b>"ALL INDIA BANK"</b>.<br>
 <h3>Visit:</h3>
 
 <b>All India Bank</b> website at:<br>
-<a href="http://aib.great-site.net">aib.great-site.net</a>
+<a href="https://yogeshwadekars.000webhostapp.com/Basic-Banking-System/index.php">ALL INDIA BANK</a>
 <br><br>
 I have used :<br>
 
