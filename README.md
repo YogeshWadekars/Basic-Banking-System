@@ -41,3 +41,33 @@ The main features are:
 </ul>
 
 
+# Project Highlights
+
+<b>Home Page</b><br>
+<img src="highlights/home1.ipg">
+<img src="highlights/home2.ipg">
+<br>
+
+
+<b>View Customers Page</b><br>
+<img src="highlights/customers.jpg.ipg">
+<br>
+
+
+
+<b>Transactions Page of Particular Customer</b><br>
+<img src="highlights/transactions.ipg">
+<br>
+
+
+
+<b>Money Transfer Page</b><br>
+<img src="highlights/transfer1.ipg">
+<img src="highlights/transfer2.ipg">
+<br>
+
+
+
+<b>Success Page</b><br>
+<img src="highlights/success.ipg">
+<br>
